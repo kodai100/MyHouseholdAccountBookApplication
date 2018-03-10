@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+    <head>
+        <title>家計簿</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+        <link rel="icon" href="img/favicon.ico">
+        <link rel="apple-touch-icon" href="img/icon.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/kodai/pitch_canceller.js"></script>
+        <script type="text/javascript" src="js/kodai/form_manager.js"></script>
+    </head>
+    <body>
+        <style>
+            body , input , textarea , select {
+            /* 入力欄にフォーカスが当たっても拡大しない */
+            font-size:16px;
+            }
+        </style>
+
+        <h2 class="h2 text-center">家計簿</h2>
+        <div class = "container">
+            <form action="php/register.php" onSubmit="return FormManager.check()" method="post" enctype="application/x-www-form-urlencoded" class="form-horizontal">
+                <div class="form-group">
+                    <label for="item" class="col-xs-2 control-label">項目</label>
+                    <div class="col-xs-10">
+                        <select name="item" class="form-control">
+                            <option value="sunday">日用品</option>
+                            <option value="out">外ごはん</option>
+                            <option value="in">家ごはん</option>
+                            <option value="hobby">趣味・雑費</option>
+                            <option value="fee">運賃</option>
+                            <option value="living">住居</option>
+                            <option value="electronic">電気</option>
+                            <option value="water">水道</option>
+                            <option value="gas">ガス</option>
+                            <option value="trans">通信</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date" class="col-xs-2 control-label">日付</label>
+                    <div class="col-xs-10">
+                        <input id="date" type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="person" class="col-xs-2 control-label">名前</label>
+                    <div class="col-xs-10">
+                        <label class="radio-inline"><input type="radio" name="person" value="kodai" data-toggle="radio">こうだい</label>
+                        <label class="radio-inline"><input type="radio" name="person" value="mai" data-toggle="radio">まい</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-xs-2 control-label">品目</label>
+                    <div class="col-xs-10">
+                        <input type="text" name="name" class="form-control" placeholder="おにぎり">
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="price" class="col-xs-2 control-label">金額</label>
+                    <div class="col-xs-10">
+                        <input type="number" name="price" class="form-control" placeholder="1000" pattern="\d*">
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-10 col-xs-offset-2">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <input type="submit" value="送信" class="btn btn-lg btn-primary">
+                            </div>
+                            <div class="btn-group">
+                                <input type="button" value="リセット" onclick="FormManager.reset();" class="btn btn-lg btn-danger">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-10 col-xs-offset-2">
+                        <! Will be used to display an alert to the user>
+                    </div>
+                </div>
+            </form>
+
+
+            <div style="text-align:center;" width="100%">
+                <img width="250px" id="penguin">
+                <script type="text/javascript" src="js/kodai/random_image.js"></script>
+            </div>
+        </div>
+    </body>
+
+</html>
