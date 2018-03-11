@@ -22,11 +22,11 @@
 
         <h2 class="h2 text-center">家計簿</h2>
         <div class = "container">
-            <form action="php/register.php" onSubmit="return FormManager.check()" method="post" enctype="application/x-www-form-urlencoded" class="form-horizontal">
+            <form action="php/register.php" id="form" onSubmit="return formManager.check()" method="post" enctype="application/x-www-form-urlencoded" class="form-horizontal">
                 <div class="form-group">
                     <label for="item" class="col-xs-2 control-label">項目</label>
                     <div class="col-xs-10">
-                        <select name="item" class="form-control">
+                        <select name="item" class="form-control" required>
                             <option value="sunday">日用品</option>
                             <option value="out">外ごはん</option>
                             <option value="in">家ごはん</option>
@@ -49,21 +49,21 @@
                 <div class="form-group">
                     <label for="person" class="col-xs-2 control-label">名前</label>
                     <div class="col-xs-10">
-                        <label class="radio-inline"><input type="radio" name="person" value="kodai" data-toggle="radio">こうだい</label>
-                        <label class="radio-inline"><input type="radio" name="person" value="mai" data-toggle="radio">まい</label>
+                        <label class="radio-inline"><input type="radio" name="person" value="kodai" data-toggle="radio" required>こうだい</label>
+                        <label class="radio-inline"><input type="radio" name="person" value="mai" data-toggle="radio" required>まい</label>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="name" class="col-xs-2 control-label">品目</label>
                     <div class="col-xs-10">
-                        <input type="text" name="name" class="form-control" placeholder="おにぎり">
+                        <input type="text" name="name" class="form-control" placeholder="おにぎり" required>
                     </div>
                     
                 </div>
                 <div class="form-group">
                     <label for="price" class="col-xs-2 control-label">金額</label>
                     <div class="col-xs-10">
-                        <input type="number" name="price" class="form-control" placeholder="1000" pattern="\d*">
+                        <input type="number" name="price" class="form-control" placeholder="1000" pattern="\d*" required>
                     </div>
                     
                 </div>
@@ -74,7 +74,7 @@
                                 <input type="submit" value="送信" class="btn btn-lg btn-primary">
                             </div>
                             <div class="btn-group">
-                                <input type="button" value="リセット" onclick="FormManager.reset();" class="btn btn-lg btn-danger">
+                                <input type="button" value="リセット" onclick="formManager.reset();" class="btn btn-lg btn-danger">
                             </div>
                         </div>
                     </div>

@@ -1,37 +1,37 @@
+window.onload = function() {
+    formManager = new FormManager('form');
+};
+
 class FormManager{
 
     // TODO: formのDOMを保持する
 
-    constructor(){
-
+    constructor(formName){
+        this.formElement = document.getElementById(formName);
     }
 
-    // TODO クラス・メソッド化
-    static check(){
-        if(window.confirm('送信してよろしいですか？')){ // 確認ダイアログを表示
+    check(){
 
-            return true; // 「OK」時は送信を実行
-    
-        }
-        else{ // 「キャンセル」時の処理
-    
-            window.alert('キャンセルされました'); // 警告ダイアログを表示
-            return false; // 送信を中止
-    
-        }
-    }
-
-    // TODO クラス・メソッド化
-    static reset(){
-        if(window.confirm('削除してもよろしおす？')){
+        if(window.confirm('送信してよろしいですか？')){
 
             return true;
         }
         else{
     
-            window.alert('キャンセルされました');
+            window.alert('キャンセルされました。\n送信されていません。');
             return false;
     
+        }
+    }
+
+    reset(){
+        if(window.confirm('入力内容を消去しますか？')){
+            this.formElement.reset();
+            return true;
+        }
+        else{
+            window.alert('キャンセルされました');
+            return false;
         }
     }
 }
