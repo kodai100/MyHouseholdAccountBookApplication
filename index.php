@@ -1,3 +1,5 @@
+<?php date_default_timezone_set('Asia/Tokyo'); ?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -27,30 +29,31 @@
                     <label for="item" class="col-xs-2 control-label">項目</label>
                     <div class="col-xs-10">
                         <select name="item" class="form-control" required>
-                            <option value="sunday">日用品</option>
-                            <option value="out">外ごはん</option>
-                            <option value="in">家ごはん</option>
-                            <option value="hobby">趣味・雑費</option>
-                            <option value="fee">運賃</option>
-                            <option value="living">住居</option>
-                            <option value="electronic">電気</option>
-                            <option value="water">水道</option>
-                            <option value="gas">ガス</option>
-                            <option value="trans">通信</option>
+                            <option value="日用品">日用品</option>
+                            <option value="外ごはん">外ごはん</option>
+                            <option value="家ごはん">家ごはん</option>
+                            <option value="趣味・娯楽">趣味・娯楽</option>
+                            <option value="運賃">運賃</option>
+                            <option value="住居費">住居</option>
+                            <option value="雑費">雑費</option>
+                            <option value="電気">電気</option>
+                            <option value="水道">水道</option>
+                            <option value="ガス">ガス</option>
+                            <option value="通信">通信</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="date" class="col-xs-2 control-label">日付</label>
                     <div class="col-xs-10">
-                        <input name="date" id="date" type="date" class="form-control">
+                        <input name="date" id="date" type="date" class="form-control" value="<?php echo date("Y-m-d"); ?>">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="person" class="col-xs-2 control-label">名前</label>
                     <div class="col-xs-10">
-                        <label class="radio-inline"><input type="radio" name="person" value="kodai" data-toggle="radio" required>こうだい</label>
-                        <label class="radio-inline"><input type="radio" name="person" value="mai" data-toggle="radio" required>まい</label>
+                        <label class="radio-inline"><input type="radio" name="person" value="高尾航大" data-toggle="radio" required>こうだい</label>
+                        <label class="radio-inline"><input type="radio" name="person" value="長谷川まい" data-toggle="radio" required>まい</label>
                     </div>
                 </div>
                 <div class="form-group">
